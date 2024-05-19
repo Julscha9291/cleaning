@@ -52,7 +52,11 @@ def cleanup_download_folder():
             
 def cleanup_desktop_folder():
     # Gehe durch alle Dateien im Download-Ordner
-    for filename in os.listdir(desktop_folder):
+      for filename in os.listdir(desktop_folder):
+        # Überspringe die Datei 'cleaning.sh'
+        if filename == 'cleaning.sh':
+            continue
+
         file_path = os.path.join(desktop_folder, filename)
 
         # Überspringe, wenn es sich um ein Verzeichnis handelt
